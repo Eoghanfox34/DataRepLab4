@@ -14,17 +14,23 @@ import {
 
 function App() {
   return (
+    //Setting up client-side routing using BrowserRouter for the entire app.
     <BrowserRouter>
     <div className="App">
+
+      /* Creating a navigation bar with a dark theme */      
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
+          /* Defining navigation links */
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/read">Read</Nav.Link>
-            <Nav.Link href="/create">Create</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link> /* Link to the home page */
+            <Nav.Link href="/read">Read</Nav.Link> /* Link to the read page */
+            <Nav.Link href="/create">Create</Nav.Link> /* Link to the create page */
           </Nav>
         </Container>
       </Navbar>
+
+      /* Defining routes for the application within the Routes component */
       <Routes>
         <Route path='/' element={<Content></Content>}></Route>
         <Route path='/read' element={<Header></Header>}></Route>
