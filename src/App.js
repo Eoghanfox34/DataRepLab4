@@ -9,6 +9,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {
   BrowserRouter, Routes, Route} from "react-router-dom";
+import Read from './Components/read'; 
+import Create from './Components/create';
 
 
 
@@ -18,28 +20,30 @@ function App() {
     <BrowserRouter>
     <div className="App">
 
-      /* Creating a navigation bar with a dark theme */      
+      {/** Create a navigation bar with a dark theme */}    
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          /* Defining navigation links */
+         {/** Defining navigation links */}
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link> /* Link to the home page */
-            <Nav.Link href="/read">Read</Nav.Link> /* Link to the read page */
-            <Nav.Link href="/create">Create</Nav.Link> /* Link to the create page */
+            {/** Link to the Home page */}
+            <Nav.Link href="/">Home</Nav.Link> 
+            {/** Link to the Read page */}
+            <Nav.Link href="/read">Read</Nav.Link> 
+            {/** Link to the Create page */}
+            <Nav.Link href="/create">Create</Nav.Link> 
           </Nav>
         </Container>
       </Navbar>
 
-      /* Defining routes for the application within the Routes component */
+     {/** Define routes for the application within the Routes component */}
       <Routes>
         <Route path='/' element={<Content></Content>}></Route>
-        <Route path='/read' element={<Header></Header>}></Route>
-        <Route path='/create' element={<Footer></Footer>}></Route>
+        <Route path='/read' element={<Read></Read>}></Route>
+        <Route path='/create' element={<Create></Create>}></Route>
         </Routes>     
 
-      <Header></Header>
-      <Content></Content>
-      <Footer></Footer>
+
+  
     </div>
     </BrowserRouter>
   );
